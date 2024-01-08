@@ -1,4 +1,5 @@
 import "./Weather.css";
+import "./App.css";
 import Weather from "./Weather.js";
 import "./index.js";
 
