@@ -6,7 +6,7 @@ import "./index.js";
 function App() {
   return (
     <div className="Container">
-      <Weather />
+      <Weather defaultCity="Pretoria" />
     </div>
   );
 }
