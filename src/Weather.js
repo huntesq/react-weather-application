@@ -10,14 +10,14 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      temperature: response.data.main.temp,
+      temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
-      city: response.data.name,
-      humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
+      city: response.data.city,
+      humidity: response.data.temperature.humidity,
+      description: response.data.condition.description,
       iconUrl:
         "https://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
-      date: new Date(response.data.dt * 1000),
+      date: new Date(response.data.time * 1000),
     });
   }
   if (weatherData.ready) {
@@ -76,9 +76,7 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "8ba84ff1f0d264o7e59dft09ea490231";
-    const apiUrl =
-      "https://api.shecodes.io/weather/v1/current?query={props.defaultCity}&key={key}";
-
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
