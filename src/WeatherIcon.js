@@ -3,25 +3,30 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
-    "01d": "CLEAR_SKY",
+    "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
-    "02d": "FEW_CLOUDS_DAY",
-    "02n": "FEW_CLOUDS_NIGHT",
-    "03d": "SCATTERED_CLOUDS_DAY",
-    "03n": "SCATTERED_CLOUDS_NIGHT",
-    "04d": "BROKEN_CLOUDS_DAY",
-    "04n": "BROKEN_CLOUDS_NIGHT",
-    "09d": "SHOWER_RAINS",
-    "10d": "RAINS",
-    "11d": "THUNDERSTORM",
+    "02d": "PARTLY_CLOUDY_DAY",
+    "02n": "PARTLY_CLOUDY_NIGHT",
+    "03d": "PARTLY_CLOUDY_DAY",
+    "03n": "PARTLY_CLOUDY_NIGHT",
+    "04d": "CLOUDY",
+    "04n": "CLOUDY",
+    "09d": "RAIN",
+    "09n": "RAIN",
+    "10d": "RAIN",
+    "10n": "RAIN",
+    "11d": "RAIN",
+    "11n": "RAIN",
     "13d": "SNOW",
-    "50d": "MIST",
+    "13n": "SNOW",
+    "50d": "FOG",
+    "50n": "FOG",
   };
 
   return (
     <ReactAnimatedWeather
       icon={codeMapping[props.code]}
-      color="1e1e1e"
+      color="#1e1e1e"
       size={props.size}
       animate={true}
     />
